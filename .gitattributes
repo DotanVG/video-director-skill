@@ -1,0 +1,8 @@
+*.sh text eol=lf
+*.py text eol=lf
+*.mjs text eol=lf
+*.md text eol=lf
+*.gif binary
+*.mp4 binary
+*.png binary
+*.skill binary
