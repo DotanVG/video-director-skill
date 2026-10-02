@@ -1,5 +1,16 @@
 # QA, render matrix, delivery
 
+Scripts used in this phase:
+
+| Script | What it does |
+| --- | --- |
+| `scripts/contact_sheet.sh` | Timestamped contact sheet of any video or range (fps, columns, tile width, start, duration); the main way to look at footage and renders |
+| `scripts/audio_window.py` | Waveform with beat grid at music switches and hits |
+| `scripts/master.py` | Loudness master after rendering (see `sound.md`) |
+| `scripts/share_versions.sh` | 480p (or any height) share copies of every MP4 in a folder, orientation-aware, about 3 MB per 30 s |
+| `scripts/make_gif.sh` | Palette-generated GIF of a segment for READMEs, store pages and itch.io covers |
+| `assets/template/render-all.sh` | Renders every version root in `versions/` to `renders/` |
+
 ## Contents
 1. The QA loop
 2. Pitfalls and fixes

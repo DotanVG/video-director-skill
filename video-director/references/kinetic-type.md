@@ -1,5 +1,13 @@
 # Kinetic type
 
+## Contents
+1. Type system
+2. Sizing with real metrics (`scripts/font_fit.py`)
+3. Safe zones
+4. Slam vocabulary
+5. Timing
+6. Seek safety
+
 ## Type system
 
 - One display face (heavy grotesk such as Archivo Black, Bricolage Grotesque ExtraBold, Anton, or the brand's font) for slams, all caps.
@@ -9,7 +17,7 @@
 
 ## Sizing with real metrics
 
-Never guess widths. Measure with `scripts/font_fit.py fonts/<Display>.woff2 --max-width 1536 "LINE ONE" "LINE TWO"`; it prints the width per 100 px and the largest size that fits. Keep every line inside the middle 80 percent of the canvas width (1536 px of 1920, 864 px of 1080).
+Never guess widths. `scripts/font_fit.py` reads the font's real glyph advances (fontTools) and reports, per line, the width at 100 px and the largest size that fits a maximum width; `--size` adds the width at a chosen size and `--tracking` accounts for letter-spacing. Example: `python scripts/font_fit.py fonts/<Display>.woff2 --max-width 1536 "LINE ONE" "LINE TWO"`. Keep every line inside the middle 80 percent of the canvas width (1536 px of 1920, 864 px of 1080).
 
 Starting points (heavy grotesk, 1080p):
 

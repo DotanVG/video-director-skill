@@ -1,5 +1,7 @@
 # Edit generator template
 
+Copy this template at the start of the Build phase whenever the edit has more than one scene, more than one aspect ratio, or more than one music version; for a single short scene, hand-write one composition instead.
+
 Tested with HyperFrames 0.8.x: `node build.mjs` then `npx hyperframes check` passes with 0 errors and renders in 16:9 and 9:16.
 
 ## Use

@@ -78,4 +78,4 @@ A bot plays with real keyboard, mouse and touch events, so the footage is the re
 
 ## 8. The clip index
 
-Write `CLIPS.md` (template in `assets/doc-templates/CLIPS.md`): file, resolution, length, what happens with approximate timestamps, which cheats were active, known problems (popup at 8 s, cursor visible). Then make a 1 fps contact sheet per clip with `scripts/contact_sheet.sh` and a tighter one (4-5 fps) around each candidate moment before cutting. Notes are approximate; frames are truth.
+Write `CLIPS.md` (template in `assets/doc-templates/CLIPS.md`): file, resolution, length, what happens with approximate timestamps, which cheats were active, known problems (popup at 8 s, cursor visible). Then make a 1 fps contact sheet per clip with `scripts/contact_sheet.sh` (ffmpeg tiles of frames with burned-in timestamps; arguments: video, fps, columns, tile width, output, start, duration) and a tighter one (4-5 fps) around each candidate moment before cutting. Notes are approximate; frames are truth.

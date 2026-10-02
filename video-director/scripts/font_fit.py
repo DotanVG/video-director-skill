@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
+# Usage: python font_fit.py font.woff2 --max-width 1536 [--size PX] [--tracking EM] "LINE" ["LINE" ...]
 """Measure text widths with real font metrics and find the largest size that fits.
 
 Usage:
-  python font_fit.py fonts/Display.woff2 --max-width 1536 "THEY CAME" "TO KILL YOU."
+  python font_fit.py fonts/Display.woff2 --max-width 1536 "LINE ONE" "LINE TWO."
   python font_fit.py fonts/Display.woff2 --size 190 "LINE"        # width at a given size
 Options:
   --max-width   allowed width in px (80 percent of the canvas: 1536 for 1920, 864 for 1080)

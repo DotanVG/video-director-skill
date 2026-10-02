@@ -1,12 +1,18 @@
 # Intake: what to ask, what to assume
 
+## Contents
+1. How to ask
+2. The question bank (project, message, format, director's view, sound, process)
+3. Defaults when unanswered
+4. Write the brief
+
 The goal of intake is a brief you could hand to another editor. Ask only what you cannot infer from the user's message, their files, or a `BRIEF.md` / script that already exists. Read those first.
 
 ## How to ask
 
 - Use the question tool when available, at most 4 questions per round, 2 to 4 options each, recommended option first and labelled "(Recommended)". Free text is always possible.
 - Group by what blocks you first: source material and deliverables before style.
-- If the user asked you to work autonomously, ask only blockers (missing footage you cannot capture, unclear legal claims, a choice that changes everything). State every default you picked in your first progress note.
+- If the user said "work autonomously" or "just do it", ask only blockers (missing footage you cannot capture, unclear legal claims, a choice that changes everything). State every default you picked in your first progress note.
 - Never ask about things a sensible default covers. Say the default and move on.
 
 ## The question bank

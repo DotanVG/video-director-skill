@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Usage: python simmix.py work/audio-plan.json [--version A] [--wav mix.wav]  |  python simmix.py --onsets sfx/*.wav
 """Simulate a HyperFrames audio mix offline with ffmpeg and report integrated loudness and peak.
 
 Usage:

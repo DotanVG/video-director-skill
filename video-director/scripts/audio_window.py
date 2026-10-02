@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Usage: python audio_window.py video.mp4 T0 T1 [--grid 0.5] [--step 0.005] [--png out.png]
 """Inspect the audio of a video or track around a moment: envelope table + waveform picture with a beat grid.
 
 Usage:

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Usage: python master.py renders/*.mp4 [--lufs -14] [--tp -1] [--duration 30] [--raw-dir work/raw]
 """Master rendered videos to a loudness target with two-pass EBU R128 loudnorm.
 
 Usage:

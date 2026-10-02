@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Usage: python beat_grid.py track.wav [--start S] [--end S] [--beats-per-bar 4] [--bpm N]
 """Verify a music track's tempo, beat phase and downbeats (bar 1) independently of beat detectors.
 
 Usage:

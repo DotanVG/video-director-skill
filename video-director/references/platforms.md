@@ -1,6 +1,6 @@
 # Platform delivery specs
 
-Specs change. These were checked in late 2026 against official docs where available; verify the official page before a final export, and tell the user when you could not.
+**Last verified: October 2026.** Specs change. Re-check the official page before a final export, and tell the user when you could not.
 
 | Platform | Aspect | Resolution / fps | Length | Codec / container | Notes |
 | --- | --- | --- | --- | --- | --- |

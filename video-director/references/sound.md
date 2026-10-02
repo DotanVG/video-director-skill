@@ -1,5 +1,14 @@
 # Sound: music grid, versions, SFX, mix, master
 
+Scripts used in this phase:
+
+| Script | What it does |
+| --- | --- |
+| `scripts/beat_grid.py` | Tempo, beat phase and downbeats measured from the audio itself (onset autocorrelation + kick fold); flags tracks with no steady pulse; prints per-bar loudness |
+| `scripts/simmix.py` | Rebuilds a HyperFrames mix offline with ffmpeg (lanes, volumes, offsets) and reports integrated LUFS and true peak; `--onsets` finds SFX transients for alignment; `--wav` writes the mix to listen to |
+| `scripts/master.py` | Two-pass EBU R128 loudnorm of finished renders, video stream copied, exact duration, raw renders kept |
+| `scripts/audio_window.py` | Envelope table and waveform picture with a beat grid around any moment, to prove switches, crossfades and hits land on the beat |
+
 ## Contents
 1. Choosing music
 2. Verifying tempo and downbeats

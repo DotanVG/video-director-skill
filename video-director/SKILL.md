@@ -1,6 +1,12 @@
 ---
 name: video-director
-description: Direct, edit and deliver professional videos end to end with HyperFrames, acting as both the director (story, hook, script, shot list, music choice) and the editor (beat-synced cuts, camera punch-ins, kinetic type, sound design, color treatment, loudness mastering, multi-format delivery). Use this whenever someone wants a trailer, teaser, promo, launch video, sizzle reel, social cut, highlight reel, app preview, or any edit built from their own footage, screenshots, music or a game they are making, including game trailers for Steam, itch.io, game jams, app stores, YouTube, TikTok, Reels and Shorts, and when footage still has to be captured (screen recording, scripted gameplay capture, mobile emulation). Also use it for "make it look professional", A/B music versions, 16:9 plus 9:16 deliverables, or a director's review of an existing cut, even if the user never says "director" or "HyperFrames".
+description: Direct, edit and deliver professional videos end to end with HyperFrames, as both director (story, hook, script, shot list, music) and editor (beat-synced cuts, punch-ins, kinetic type, sound design, color, loudness, multi-format delivery). Use for trailers, teasers, promos, launch videos, sizzle reels, social cuts, highlight reels, app previews and game trailers (Steam, itch.io, game jams, app stores), for capturing new footage by screen recording or scripted gameplay, for A/B music versions and landscape 16x9 plus vertical 9x16 deliverables, or to review and fix an existing cut, even if the user never says director or HyperFrames.
+license: MIT
+compatibility: Requires Node.js 22+, FFmpeg, Python 3 with numpy (fonttools and brotli for font fitting) and the HyperFrames skills installed through npx hyperframes skills update.
+metadata:
+  version: "1.1"
+  requires: hyperframes, hyperframes-core, hyperframes-animation, hyperframes-keyframes, hyperframes-audio, media-use, hyperframes-cli
+  optional: hyperframes-registry
 ---
 
 # Video Director
@@ -20,13 +26,13 @@ This skill owns the craft and the process (intake, treatment, edit plan, sound, 
 | CLI: init, lint, check, snapshot, render, beats | `/hyperframes-cli` |
 | Named looks (glitch, CRT, light leak) before hand-building | `/hyperframes-registry` |
 
-If a skill is missing, run `npx hyperframes skills update <name>` (bare `npx hyperframes skills update` refreshes the core set). Read `/hyperframes` once for its project-state rules, but this skill replaces its intent interview: run the intake below, then write `BRIEF.md` with `workflow: general-video` so HyperFrames tooling resumes cleanly. If the user has a personal style kit skill installed (for example a motion-graphics kit with style blocks and SFX), use its fonts, style blocks and sounds.
+If any of these skills are missing, run `npx hyperframes skills update` first (or `npx hyperframes skills update <name>` for one skill). Read `/hyperframes` once for its project-state rules, but this skill replaces its intent interview: run the intake below, then write `BRIEF.md` with `workflow: general-video` so HyperFrames tooling resumes cleanly. If the user has a personal style kit skill installed (for example a motion-graphics kit with style blocks and SFX), use its fonts, style blocks and sounds.
 
 ## The process
 
 Work through these phases in order. Each phase has a reference file; read it when you reach the phase, not before.
 
-1. **Intake** (`references/intake.md`). Ask what you cannot infer: project and source material, what must be shown, message, audience, length, platforms, ratios, quality, music, voice, brand, autonomy level, deliverables. Batch questions (max 4 per round, recommended option first). Skip anything the user already answered or a brief already states. When the user says "work autonomously", ask only what truly blocks you and state your defaults.
+1. **Intake** (`references/intake.md`). Ask what you cannot infer: project and source material, what must be shown, message, audience, length, platforms, ratios, quality, music, voice, brand, autonomy level, deliverables. Batch questions (max 4 per round, recommended option first). Skip anything the user already answered or a brief already states. When the user says "work autonomously" or "just do it", ask only blocking questions (missing material you cannot capture, unverifiable claims, a choice that changes everything) and state every default you picked up front, in your first progress note.
 2. **Discovery**. Read every brief, script and clip index the user has. Inspect every source with ffprobe and timestamped contact sheets (`scripts/contact_sheet.sh`), then tighter sheets around candidate moments. Never trust timestamps in notes; verify them. If footage is missing or weak, plan a capture (`references/capture.md`) or ask.
 3. **Treatment** (`references/director.md`, plus `references/game-trailers.md` for games). Write the hook line, the arc, and a timing table: every scene, every cut with source and range, every word with the beat it lands on, every camera move, every SFX. Save it as `SCRIPT_FINAL.md` (template in `assets/doc-templates/`). Facts only from the user's material: never invent awards, numbers, dates or features.
 4. **Music and grid** (`references/sound.md`). Choose or source the track, verify its tempo and downbeats yourself (`scripts/beat_grid.py`), pick the file offset so a downbeat lands on 0.0, and lock scene changes to bar lines and slams to beats. Plan music versions when the user wants A/B testing.
