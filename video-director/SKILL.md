@@ -2,9 +2,9 @@
 name: video-director
 description: Direct, edit and deliver professional videos end to end with HyperFrames, as both director (story, hook, script, shot list, music) and editor (beat-synced cuts, punch-ins, kinetic type, sound design, color, loudness, multi-format delivery). Use for trailers, teasers, promos, launch videos, sizzle reels, social cuts, highlight reels, app previews and game trailers (Steam, itch.io, game jams, app stores), for capturing new footage by screen recording or scripted gameplay, for A/B music versions and landscape 16x9 plus vertical 9x16 deliverables, or to review and fix an existing cut, even if the user never says director or HyperFrames.
 license: MIT
-compatibility: Requires Node.js 22+, FFmpeg, Python 3 with numpy (fonttools and brotli for font fitting) and the HyperFrames skills installed through npx hyperframes skills update.
+compatibility: Requires Node.js 22+, FFmpeg, Python 3 with numpy (fonttools and brotli for font fitting) and the HyperFrames skills installed through npx hyperframes skills update. Tested with HyperFrames 0.8.114.
 metadata:
-  version: "1.1"
+  version: "1.2"
   requires: hyperframes, hyperframes-core, hyperframes-animation, hyperframes-keyframes, hyperframes-audio, media-use, hyperframes-cli
   optional: hyperframes-registry
 ---
@@ -54,6 +54,7 @@ Work through these phases in order. Each phase has a reference file; read it whe
 - One consistent color treatment on all footage through `/media-use` treatments, a subtle vignette, no film grain (it bloats files).
 - Sound: music bed plus quiet, purposeful SFX about 12 to 18 dB under the music; no gratuitous whooshes. Master to the platform target.
 - End on a designed end card that holds: title or logo, one-line pitch, the call to action and URL, credits small. Never end on black unless asked.
+- Everything runs locally. Never use HeyGen cloud rendering, publishing, paid TTS, or any service that uploads the user's files or spends credits without the user's explicit approval. Record the screen or start dev servers only for an agreed capture.
 
 ## Hard-won rules (each cost a render once)
 

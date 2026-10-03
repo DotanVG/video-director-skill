@@ -82,14 +82,36 @@ One picture edit is generated from data: a sub-composition per scene per aspect,
 ```bash
 git clone https://github.com/DotanVG/video-director-skill.git
 cd video-director-skill
-./install.sh            # macOS / Linux / Git Bash   (add --project for ./.claude/skills)
+./install.sh            # macOS / Linux / Git Bash
 # or
 ./install.ps1           # Windows PowerShell
 ```
 
-The installer copies `video-director/` into `~/.claude/skills/`, runs `npx hyperframes skills update` to install the HyperFrames skills it builds on, and checks your tools. Restart Claude Code afterwards.
+The installer:
 
-Prefer manual? Copy the `video-director` folder into `~/.claude/skills/` and run `npx hyperframes skills update`. A packaged `dist/video-director.skill` is included for apps that install `.skill` files.
+1. Copies `video-director/` into `~/.claude/skills/`. If a copy already exists, it moves it to `~/.claude/skill-backups/` first instead of deleting it.
+2. Asks before running `npx hyperframes@0.8.114 skills update`, which installs the HyperFrames skills this skill builds on. HyperFrames is pinned to the version this skill was tested with.
+3. Checks your tools, then tells you how to turn off HyperFrames telemetry. Restart Claude Code afterwards.
+
+| Option (`install.sh` / `install.ps1`) | Effect |
+| --- | --- |
+| `--project` / `-Project` | Install into `./.claude/skills` instead of your home folder |
+| `--skip-hyperframes` / `-SkipHyperFrames` | Don't touch HyperFrames skills (install them yourself later) |
+| `--latest` / `-Latest` | Use the latest HyperFrames instead of the pinned version |
+| `--no-telemetry` / `-NoTelemetry` | Turn off HyperFrames' anonymous usage telemetry |
+| `--yes` / `-Yes` | Don't ask before installing the HyperFrames skills |
+
+Prefer manual? Copy the `video-director` folder into `~/.claude/skills/` and run `npx hyperframes@0.8.114 skills update`. A packaged `dist/video-director.skill` is attached to each [release](https://github.com/DotanVG/video-director-skill/releases) for apps that install `.skill` files.
+
+## 🔒 What it runs on your machine
+
+- **Local tools only:** FFmpeg, Node.js (HyperFrames through `npx`) and the Python helper scripts in `video-director/scripts/`. Renders happen on your machine.
+- **No cloud by default:** the skill tells Claude never to use HeyGen cloud rendering, publishing, paid text-to-speech, or anything that uploads your files or spends credits without your explicit approval. Your files stay local unless you approve publishing.
+- **Screen recording and dev servers:** only when you agree to capture new footage. Claude Code's normal permission prompts still apply to every command.
+- **HyperFrames skills:** `skills update` installs or updates the HyperFrames skills for the AI coding tools it detects, and removes HyperFrames skills that are no longer published. Use `--skip-hyperframes` to manage them yourself.
+- **Telemetry:** HyperFrames sends anonymous usage telemetry by default. Turn it off with `npx hyperframes telemetry disable`, `HYPERFRAMES_NO_TELEMETRY=1` or `DO_NOT_TRACK=1`, or install with `--no-telemetry`. This skill itself collects nothing.
+
+Found a security problem? See [SECURITY.md](SECURITY.md).
 
 ## 💬 Use it
 
