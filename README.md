@@ -21,6 +21,11 @@ Trailers, teasers, promos, launch videos, social cutdowns and app previews, buil
 
 </div>
 
+> [!TIP]
+> **Recommended model:** Claude Opus 5.5 at high effort. Directing and editing is long, multi-step work, and stronger models follow the full process (look, fix, look again) more reliably.
+>
+> **How the examples were made:** every edit, sound mix, render and master shown in this README was produced with Opus 5.5 at high effort, using this skill. The raw gameplay clips were captured beforehand with scripted browser capture.
+
 ---
 
 ## ✨ What it does
