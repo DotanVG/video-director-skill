@@ -101,7 +101,7 @@ The installer:
 | `--no-telemetry` / `-NoTelemetry` | Turn off HyperFrames' anonymous usage telemetry |
 | `--yes` / `-Yes` | Don't ask before installing the HyperFrames skills |
 
-**Lightweight installation:** only `video-director/` is installed (about 106 KiB of file contents). The packaged `.skill` is about 54 KiB and contains no demo videos, GIFs or soundtracks. `examples/` contains silent GIF previews only. Supply your own footage and music when using the skill. The shallow clone above avoids downloading older media revisions.
+**Lightweight installation:** the installer copies only `video-director/` from this repository (about 106 KiB of file contents). HyperFrames skills and dependencies are additional downloads unless you use `--skip-hyperframes` / `-SkipHyperFrames`. The packaged `.skill` is about 53 KiB and contains no demo videos, GIFs or soundtracks. `examples/` contains silent GIF previews only. Supply your own footage and music when using the skill. The shallow clone above avoids downloading older media revisions, but still downloads the current previews (about 12.26 MiB).
 
 Prefer manual? Copy the `video-director` folder into `~/.claude/skills/` and run `npx hyperframes@0.8.114 skills update`. A packaged `dist/video-director.skill` is attached to each [release](https://github.com/DotanVG/video-director-skill/releases) for apps that install `.skill` files.
 
