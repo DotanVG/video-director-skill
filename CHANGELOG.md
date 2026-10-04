@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Reduce the five README GIFs by approximately 56% using 8 fps, a 96-color palette without dithering, and widths matched to README display sizes. Preserve the preview sequences and looping.
+- Remove the two redundant demo MP4s and their README links; keep silent GIF previews. The skill still uses user-provided footage and music.
+- Use a shallow clone in installation instructions and clarify that example media are excluded from the installed skill and `.skill` package.
+
 ## 1.2 (2026-10-03)
 
 - Installer pins HyperFrames to the tested version (0.8.114). Use `--latest` to override.

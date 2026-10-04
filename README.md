@@ -12,7 +12,7 @@ Trailers, teasers, promos, launch videos, social cutdowns and app previews, buil
 
 <table>
   <tr>
-    <td align="center" valign="top"><img src="examples/trailer-16x9.gif" width="560" alt="16:9 example: kinetic hook, beat-synced gameplay cuts, the big ability moment"><br><sub><b>16:9</b> · hook, beat-synced cuts, held hero shot</sub></td>
+    <td align="center" valign="top"><img src="examples/trailer-16x9.gif" width="480" alt="16:9 example: kinetic hook, beat-synced gameplay cuts, the big ability moment"><br><sub><b>16:9</b> · hook, beat-synced cuts, held hero shot</sub></td>
     <td align="center" valign="top"><img src="examples/trailer-9x16.gif" width="250" alt="9:16 example: reframed gameplay, countdown, platform joke beat"><br><sub><b>9:16</b> · reframed for phones</sub></td>
   </tr>
 </table>
@@ -64,7 +64,7 @@ flowchart LR
 One picture edit is generated from data: a sub-composition per scene per aspect, plus a thin root file per music version. The picture is identical across versions; only the soundtrack and its accents change.
 
 <p align="center">
-  <img src="examples/countdown-platforms-16x9.gif" width="560" alt="countdown punch-in, hard cut to black, desktop and mobile platform beat">
+  <img src="examples/countdown-platforms-16x9.gif" width="480" alt="countdown punch-in, hard cut to black, desktop and mobile platform beat">
   <br><sub>Punch-in on the in-game timer, a hard cut to black on the punchline, then a desktop + phone platform beat</sub>
 </p>
 
@@ -80,7 +80,7 @@ One picture edit is generated from data: a sub-composition per scene per aspect,
 **Requirements:** [Claude Code](https://docs.claude.com/en/docs/claude-code), Node.js 22+, [FFmpeg](https://ffmpeg.org), Python 3 (with `numpy`; `fonttools` + `brotli` for font fitting). HyperFrames runs through `npx`, no global install needed.
 
 ```bash
-git clone https://github.com/DotanVG/video-director-skill.git
+git clone --depth 1 https://github.com/DotanVG/video-director-skill.git
 cd video-director-skill
 ./install.sh            # macOS / Linux / Git Bash
 # or
@@ -100,6 +100,8 @@ The installer:
 | `--latest` / `-Latest` | Use the latest HyperFrames instead of the pinned version |
 | `--no-telemetry` / `-NoTelemetry` | Turn off HyperFrames' anonymous usage telemetry |
 | `--yes` / `-Yes` | Don't ask before installing the HyperFrames skills |
+
+**Lightweight installation:** the installer copies only `video-director/` from this repository (about 106 KiB of file contents). HyperFrames skills and dependencies are additional downloads unless you use `--skip-hyperframes` / `-SkipHyperFrames`. The packaged `.skill` is about 53 KiB and contains no demo videos, GIFs or soundtracks. `examples/` contains silent GIF previews only. Supply your own footage and music when using the skill. The shallow clone above avoids downloading older media revisions, but still downloads the current previews (about 12.26 MiB).
 
 Prefer manual? Copy the `video-director` folder into `~/.claude/skills/` and run `npx hyperframes@0.8.114 skills update`. A packaged `dist/video-director.skill` is attached to each [release](https://github.com/DotanVG/video-director-skill/releases) for apps that install `.skill` files.
 
@@ -209,8 +211,6 @@ video-director/
 - `simmix.py` predicted a render's loudness within 0.1 LU.
 - The example trailer: six files (three music versions x two aspects), 30.0 s, 900 frames, -14.0 LUFS, music switch measured within 10 ms of the cut.
 
-Example videos (480p, with sound): [`examples/example-16x9-480p.mp4`](examples/example-16x9-480p.mp4) · [`examples/example-9x16-480p.mp4`](examples/example-9x16-480p.mp4)
-
 ## 🙏 Credits
 
 - Rendering: [HyperFrames](https://hyperframes.heygen.com) by HeyGen and its skills (`/hyperframes-core`, `/hyperframes-keyframes`, `/hyperframes-audio`, `/media-use`, ...).
@@ -221,4 +221,4 @@ Example videos (480p, with sound): [`examples/example-16x9-480p.mp4`](examples/e
 ## 📄 License
 
 The skill (everything in `video-director/`, the scripts and the install files) is MIT licensed, see [LICENSE](LICENSE).
-The example videos and GIFs in `examples/` contain game footage, art and music that belong to their creators. They are included only to demonstrate the skill and are not covered by the MIT license.
+The example GIFs in `examples/` contain game footage and art that belong to their creators. They are included only to demonstrate the skill and are not covered by the MIT license.
